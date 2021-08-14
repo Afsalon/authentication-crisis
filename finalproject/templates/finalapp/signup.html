@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'finalapp/base.html' %}
+{%block body_block%}
+<div class="container">
+  {% if r %}
+  <h1>Thanks for Signing Up!</h1>
+  {% else %}
+  <form enctype="multipart/form-data" method="post">
+    <h1>Please Sign Up</h1>
+    {% csrf_token %}
+    {{inst_one.as_p}}
+    {{inst_two.as_p}}
+    <input type="submit"  value="Sign Up">
+  </form>
+   {% endif %}
+</div>
+{% endblock %}

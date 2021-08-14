@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'finalapp/base.html' %}
+{%block body_block%}
+<div class="container">
+  <h1>Please Sign in to continue!</h1>
+  <form method="post" action="{% url 'finalapp:signin_page' %}">
+    {% csrf_token %}
+    <label for="username">Username: </label>
+    <input id='username' type="text" name="username" placeholder="Enter your name"><br>
+    <label for="password">Password: </label>
+    <input type="password" name="password" value=""><br>
+    <input type="submit" name="" value="Sign in">
+  </form>
+</div>
+{% endblock %}
